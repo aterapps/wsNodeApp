@@ -112,14 +112,32 @@ public static string CrearHash(string frase)
 
 - Instalar las dependencias:
 
-```
-npm install
-```
-- Iniciar el servidor:
+    ```
+    npm install
+    ```
 
-```
-npm start
-```
+- Moverme a la carpeta del front
+
+    ```
+    cd app
+    ```
+- Instalar las dependencias del frontend
+
+    ```
+    yarn install
+    ```
+- Compilar el frontend
+    
+    ```
+    yarn build
+    ```
+- Iniciar el servidor desde la raiz del proyecto
+
+    ```
+    npm start
+    ```
+
+
 - Verificar que el servidor esté funcionando:
 
 ```
