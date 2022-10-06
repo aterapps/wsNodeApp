@@ -47,7 +47,7 @@ https://api.ater.gob.ar/autenticar
 3.	Codificar en base 64 el resultado del paso anterior.
 4.	Extraer los primeros 10 caracteres de la cadena obtenida en el paso anterior.
 
-``` 
+```javascript 
 //Node.js:
 
 crypto.createHash('sha512')
@@ -56,7 +56,7 @@ crypto.createHash('sha512')
     .slice(0,10)
 ```
 
-```
+```csharp
 //C#:
 
 public static string CrearHash(string frase)
@@ -73,13 +73,13 @@ public static string CrearHash(string frase)
 
 **Paso 4:** Consumir el servicio web.
 1.  Para consumir un servicio deberá hacer una solicitud https enviando el hash obtenido en el paso 3 como último parámetro de la URL:
-```
+```javascript
     https://api.ater.gob.ar/parametro1/parametro2/.../parametroN/[hash]
 ```
 
 2.  En la solicitud deberá establecer en el header la clave o campo Authorization el cual tendrá el valor de “token” (en token debe ir el valor del token obtenido en el paso 2)
 
-```
+```javascript
     headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ public static string CrearHash(string frase)
 >Ingresar el *client_id* obtenido al momento del registro y el *nombre de su certificado* **sin la extensión**. *El passphrase es la contraseña de su certificado en el caso que el mismo sea .pfx*.
 
 
-```
+```javascript
  const config = {
         client_id: '[CLIENT_ID]',
         cert_name: '[NOMBRE DEL CERTIFICADO (sin extensión)]',
@@ -116,17 +116,17 @@ public static string CrearHash(string frase)
     npm install
     ```
 
-- Moverme a la carpeta del front
+- Moverme a la carpeta de la app
 
     ```
     cd app
     ```
-- Instalar las dependencias del frontend
+- Instalar las dependencias de la app
 
     ```
     yarn install
     ```
-- Compilar el frontend
+- Compilar la app
     
     ```
     yarn build
