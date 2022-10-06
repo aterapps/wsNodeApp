@@ -9,3 +9,4 @@
 *dev*
 *.txt
 /node_modules
+/dist
