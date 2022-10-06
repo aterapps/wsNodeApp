@@ -88,8 +88,8 @@ public static string CrearHash(string frase)
 ```
 
 # Cliente APP
-
-- Copiar certificado y clave privada (en caso que sea necesario) al directorio /certs como se muestra en la estructura.
+- Crear la carpeta **certs** en la raíz del proyecto.
+- Copiar certificado y clave privada (en caso que sea necesario) a la carpeta /certs como se muestra en la estructura.
 
 ```
 ├── certs
@@ -105,7 +105,7 @@ public static string CrearHash(string frase)
 ```
  const config = {
         client_id: '[CLIENT_ID]',
-        cert_name: '[NOMBRE DEL CERTIFICADO]',
+        cert_name: '[NOMBRE DEL CERTIFICADO (sin extensión)]',
         passphrase: '[PASSWORD DEL CERTIFICADO]'
     };
 ```

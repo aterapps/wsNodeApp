@@ -11,6 +11,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 app.use(routes)
+app.use(express.static('app/dist'));
 app.get('/status', (req, res) => {
     res.send(status);
 })

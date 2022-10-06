@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700;900&display=swap');
+
+:root{
+    --primary: #102489;
+    --secondary: #4f4e4e;
+    --warning: #fdfd96;
+    --danger: #f00808;
+    --info: #84b6f4;
+    
+    --primary-hover: #161e67;
+    --secondary-hover: #7f7f7f;
+    --warning-hover: #f0f056;
+    --danger-hover: #e14848;
+    --info-hover: #d6e5fa;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;  /* 10px = 1 rem */
+
+}
+
+*, ¨:before, *:after {
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/*** Globales ***/
+
+h1, h2, h3 {
+    font-family: 'Raleway', sans-serif;
+    margin:0 0 3rem 0;
+}
+h1 {
+    font-size: 5rem;
+}
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+hr {
+    border: none;
+    height: 0.14rem;
+    /* Set the hr color */
+    color: rgb(146, 143, 143); /* old IE */
+    background-color: rgba(218, 203, 203, 0.752); /* Modern Browsers */
+}
+a {
+    text-decoration: none;
+    color:#000;
+}
+
+a{
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 2s ease-out;
+}
+
+a:hover {
+    color: var(--info)
+}
+.input-label {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.372);
+    border-radius: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+    padding:0;
+    margin-bottom: 2rem;
+}
+
+.card-codigo {
+    background-color: rgb(3, 3, 3);
+    color:#fff;
+    border-radius: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+    padding:0;
+    margin-bottom: 2rem;
+}
+
+.quote {
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+}
+.card-header-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.card-body{
+    padding: 2rem;
+}
+.card-header{
+    margin-top: 0;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 2rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+.card-header-codigo{
+    margin-top: 0;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 1rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+.card-header a{
+    color: var(--danger-hover);
+}
+
+.card-header a:hover{
+    color: var(--danger);
+    text-shadow: var(--danger) 0 0 .1rem;
+}
+
+.card-header a:active{
+    transform: scale(0.98);
+    color: var(--danger);
+}
+
+.card-footer {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+
+.form-input {
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+    padding: 1rem;
+    -webkit-appearance: none;
+    border: 0.1rem solid var(--danger-hover);
+    margin-bottom: 2rem;
+    border-radius: 0.3rem;
+}
+.form-input:focus {
+    outline: 0.1rem solid var(--primary);
+    border: 0.1rem solid var(--primary);
+
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+}
+
+
+
+.btn {
+    letter-spacing: 0.2rem;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background-color .3s ease-out;
+    text-align: center;
+    border:none;
+    border-radius: .5rem;
+}
+
+.btn:active {
+    transform: scale(0.99);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: var(--danger-hover);
+}
+
+.btn-info {
+    background-color: var(--info);
+    color: #fff;
+}
+.btn-info:hover {
+    background-color: var(--info-hover);
+    color:#4f4e4e;
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    color: #4f4e4e;
+}
+.btn-warning:hover {
+    background-color: var(--warning-hover);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.mt-1{
+    margin-top: 1rem;
+}
+.mt-2{
+    margin-top: 2rem;
+}
+.mt-3{
+    margin-top: 3rem;
+}
+.mt-4{
+    margin-top: 4rem;
+}
+.mt-5{
+    margin-top: 5rem;
+}
+
+.mb-1{
+    margin-bottom: 1rem;
+}
+.mb-2{
+    margin-bottom: 2rem;
+}
+.mb-3{
+    margin-bottom: 3rem;
+}
+.mb-4{
+    margin-bottom: 4rem;
+}
+.mb-5{
+    margin-bottom: 5rem;
+}
+
+.mr-1{
+    margin-right: 1rem;
+}
+.mr-2{
+    margin-right: 2rem;
+}
+.mr-3{
+    margin-right: 3rem;
+}
+.mr-4{
+    margin-right: 4rem;
+}
+.mr-5{
+    margin-right: 5rem;
+}
+
+.ml-1{
+    margin-left: 1rem;
+}
+.ml-2{
+    margin-left: 2rem;
+}
+.ml-3{
+    margin-left: 3rem;
+}
+.ml-4{
+    margin-left: 4rem;
+}
+.ml-5{
+    margin-left: 5rem;
+}
+
+.m-1{
+    margin: 1rem;
+}
+.m-2{
+    margin: 2rem;
+}
+.m-3{
+    margin: 3rem;
+}
+.m-4{
+    margin: 4rem;
+}
+.m-5{
+    margin: 5rem;
+}
+
+/* TEXTO */
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.text-danger {
+    color: var(--danger);
+}
+
+.text-info {
+    color: var(--info);
+}
+
+.text-warning {
+    color: var(--warning);
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-gray {
+    color: var(--secondary-hover);
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-orange {
+    color: rgb(243, 167, 105)
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1 rem;
+}
+
+pre {
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-family: monospace;
+    overflow: auto;
+}
