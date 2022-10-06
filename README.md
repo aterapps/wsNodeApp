@@ -112,39 +112,39 @@ public static string CrearHash(string frase)
 
 - Instalar las dependencias:
 
-    ```
+    ```poweshell
     npm install
     ```
 
 - Moverme a la carpeta de la app
 
-    ```
+    ```poweshell
     cd app
     ```
 - Instalar las dependencias de la app
 
-    ```
+    ```poweshell
     yarn install
     ```
 - Compilar la app
     
-    ```
+    ```poweshell
     yarn build
     ```
 - Iniciar el servidor desde la raiz del proyecto
 
-    ```
+    ```poweshell
     npm start
     ```
 
 
 - Verificar que el servidor esté funcionando:
 
-```
+```poweshell
 curl -k GET https://localhost:5000/status
 ```
 - Verificar si se puede obtener un token a través del certificado:
 
-```
+```poweshell
 curl -k GET https://localhost:5000/api/token
 ```
