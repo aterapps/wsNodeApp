@@ -112,39 +112,39 @@ public static string CrearHash(string frase)
 
 - Instalar las dependencias:
 
-    ```poweshell
+    ```PowerShell
     npm install
     ```
 
 - Moverme a la carpeta de la app
 
-    ```poweshell
+    ```PowerShell
     cd app
     ```
 - Instalar las dependencias de la app
 
-    ```poweshell
+    ```PowerShell
     yarn install
     ```
 - Compilar la app
     
-    ```poweshell
+    ```PowerShell
     yarn build
     ```
 - Iniciar el servidor desde la raiz del proyecto
 
-    ```poweshell
+    ```PowerShell
     npm start
     ```
 
 
 - Verificar que el servidor esté funcionando:
 
-```poweshell
+```PowerShell
 curl -k GET https://localhost:5000/status
 ```
 - Verificar si se puede obtener un token a través del certificado:
 
-```poweshell
+```PowerShell
 curl -k GET https://localhost:5000/api/token
 ```
