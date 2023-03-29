@@ -68,7 +68,21 @@ public static string CrearHash(string frase)
         return Convert.ToBase64String(BytesEncriptados);
     }
 }
+```
 
+```java
+
+//Java:
+
+public class Example {
+    public static String CrearHash(String frase) throws NoSuchAlgorithmException {
+        MessageDigest HashTool = MessageDigest.getInstance("SHA-512");
+        byte[] FraseComoBytes = frase.getBytes();
+        byte[] BytesEncriptados = HashTool.digest(FraseComoBytes);
+        HashTool.reset();
+        return Base64.getEncoder().encodeToString(BytesEncriptados);
+    }
+}
 ```
 
 **Paso 4:** Consumir el servicio web.
