@@ -85,6 +85,16 @@ public class Example {
 }
 ```
 
+```php
+function CrearHash($frase) {
+    $HashTool = hash_init('sha512');
+    $FraseComoBytes = mb_convert_encoding($frase, 'UTF-8');
+    hash_update($HashTool, $FraseComoBytes);
+    $BytesEncriptados = hash_final($HashTool, true);
+    return base64_encode($BytesEncriptados);
+}
+```
+
 **Paso 4:** Consumir el servicio web.
 1.  Para consumir un servicio deberá hacer una solicitud https enviando el hash obtenido en el paso 3 como último parámetro de la URL:
 ```javascript
