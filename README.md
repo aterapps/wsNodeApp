@@ -47,7 +47,7 @@ https://api.ater.gob.ar/autenticar
 3.	Codificar en base 64 el resultado del paso anterior.
 4.	Extraer los primeros 10 caracteres de la cadena obtenida en el paso anterior.
 
->Aqui algunos daremos ejemplos en diferentes lenguajes de como obtener el hash **recuerde que de este hash utilizaremos solo los primeros 10 caracteres** y los ejemplos retornan el hash completo
+>Aqui algunos daremos ejemplos en diferentes lenguajes de como obtener el hash (**recuerde que de este hash utilizaremos solo los primeros 10 caracteres** y los ejemplos retornan el hash completo)
 
 
 ```javascript 
