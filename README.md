@@ -62,6 +62,7 @@ const CrearHash = (frase) => {
         .digest('base64')
 }
 ```
+[CrearHash en Node.js](https://replit.com/@juampymdd/CrearHash-en-Nodejs#index.js)
 
 ```csharp
 //C#:
@@ -80,6 +81,7 @@ class Program {
     }
 }
 ```
+[CrearHash en C#](https://replit.com/@juampymdd/sha512#main.cs)
 
 ```java
 
@@ -99,6 +101,7 @@ public class Program {
     }
 }
 ```
+[CrearHash en Java](https://replit.com/@juampymdd/hash-2#Main.java)
 
 ```php
 
@@ -132,6 +135,7 @@ func CrearHash(frase string) string {
     return base64.StdEncoding.EncodeToString(BytesEncriptados)
 }
 ```
+[CrearHash en GO](https://replit.com/@juampymdd/QuixoticAcademicHacks#main.go)
 
 **Paso 4:** Consumir el servicio web.
 1.  Para consumir un servicio deberá hacer una solicitud https enviando el hash obtenido en el paso 3 como último parámetro de la URL:
