@@ -62,6 +62,7 @@ const CrearHash = (frase) => {
 
 ```csharp
 //C#:
+
 using System;
 using System.Security.Cryptography;
 
@@ -80,6 +81,7 @@ class Program {
 ```java
 
 //Java:
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
@@ -97,7 +99,7 @@ public class Program {
 
 ```php
 
-//PHP
+//PHP:
 
 function CrearHash($frase) {
     $HashTool = hash_init('sha512');
@@ -110,6 +112,8 @@ function CrearHash($frase) {
 ```
 
 ```go
+// GO (Golang):
+
 import (
     "crypto/sha512"
     "encoding/base64"
