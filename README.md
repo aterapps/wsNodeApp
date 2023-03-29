@@ -50,22 +50,29 @@ https://api.ater.gob.ar/autenticar
 ```javascript 
 //Node.js:
 
-crypto.createHash('sha512')
-    .update(clientID+parametrosConcatenados)
-    .digest('base64')
-    .slice(0,10)
+import crypto from 'crypto'
+
+
+const CrearHash = (frase) => {
+    return crypto.createHash('sha512')
+        .update(frase)
+        .digest('base64')
+}
 ```
 
 ```csharp
 //C#:
+using System;
+using System.Security.Cryptography;
 
-public static string CrearHash(string frase)
+class Program {
+    public static string CreateSHAHash(string frase)
     {
-        SHA512Managed HashTool = new SHA512Managed();
-        Byte[] FraseComoBytes = System.Text.Encoding.UTF8.GetBytes(string.Concat(frase));
-        Byte[] BytesEncriptados = HashTool.ComputeHash(FraseComoBytes);
+        SHA512 HashTool = SHA512.Create();
+        Byte[] PhraseAsByte = System.Text.Encoding.UTF8.GetBytes(string.Concat(frase));
+        Byte[] EncryptedBytes = HashTool.ComputeHash(PhraseAsByte);
         HashTool.Clear();
-        return Convert.ToBase64String(BytesEncriptados);
+        return Convert.ToBase64String(EncryptedBytes);
     }
 }
 ```
@@ -73,8 +80,11 @@ public static string CrearHash(string frase)
 ```java
 
 //Java:
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
-public class Example {
+public class Program {
     public static String CrearHash(String frase) throws NoSuchAlgorithmException {
         MessageDigest HashTool = MessageDigest.getInstance("SHA-512");
         byte[] FraseComoBytes = frase.getBytes();
@@ -95,6 +105,22 @@ function CrearHash($frase) {
     hash_update($HashTool, $FraseComoBytes);
     $BytesEncriptados = hash_final($HashTool, true);
     return base64_encode($BytesEncriptados);
+}
+
+```
+
+```go
+import (
+    "crypto/sha512"
+    "encoding/base64"
+)
+
+func CrearHash(frase string) string {
+    HashTool := sha512.New()
+    FraseComoBytes := []byte(frase)
+    HashTool.Write(FraseComoBytes)
+    BytesEncriptados := HashTool.Sum(nil)
+    return base64.StdEncoding.EncodeToString(BytesEncriptados)
 }
 ```
 
