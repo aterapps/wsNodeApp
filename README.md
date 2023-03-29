@@ -86,6 +86,9 @@ public class Example {
 ```
 
 ```php
+
+//PHP
+
 function CrearHash($frase) {
     $HashTool = hash_init('sha512');
     $FraseComoBytes = mb_convert_encoding($frase, 'UTF-8');
