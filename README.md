@@ -65,7 +65,7 @@ const CrearHash = (frase) => {
 [CrearHash en Node.js](https://replit.com/@juampymdd/CrearHash-en-Nodejs#index.js)
 
 ```csharp
-//C#:
+// C#:
 
 using System;
 using System.Security.Cryptography;
@@ -85,7 +85,7 @@ class Program {
 
 ```java
 
-//Java:
+// Java:
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -105,7 +105,7 @@ public class Program {
 
 ```php
 
-//PHP:
+// PHP:
 
 function CrearHash($frase) {
     $HashTool = hash_init('sha512');
