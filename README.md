@@ -63,7 +63,6 @@ const CrearHash = (frase) => {
 }
 ```
 [CrearHash en Node.js](https://replit.com/@juampymdd/CrearHash-en-Nodejs#index.js)
-<a href="https://replit.com/@juampymdd/CrearHash-en-Nodejs#index.js" target="_blank" rel="noopener noreferrer">Texto del enlace</a>
 
 ```csharp
 // C#:
