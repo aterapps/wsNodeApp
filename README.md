@@ -114,6 +114,8 @@ function CrearHash($frase) {
 
 ```
 
+[CrearHash en PHP](https://replit.com/@juampymdd/hash-1#index.php)
+
 ```go
 // GO (Golang):
 
