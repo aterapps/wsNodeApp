@@ -62,7 +62,7 @@ const CrearHash = (frase) => {
         .digest('base64')
 }
 ```
-[CrearHash en Node.js](https://replit.com/@juampymdd/CrearHash-en-Nodejs#index.js)
+[CrearHash en Node.js](https://replit.com/@juampymdd/CrearHash-en-Nodejs#index.js){:target="_blank"}
 
 ```csharp
 // C#:
