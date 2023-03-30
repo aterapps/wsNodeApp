@@ -138,7 +138,9 @@ func CrearHash(frase string) string {
 
 
 [CrearHash en GO](https://replit.com/@juampymdd/QuixoticAcademicHacks#main.go)
-```py
+```python
+# Python:
+
 import hashlib
 import base64
 
