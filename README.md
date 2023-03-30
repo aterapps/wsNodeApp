@@ -135,8 +135,21 @@ func CrearHash(frase string) string {
     return base64.StdEncoding.EncodeToString(BytesEncriptados)
 }
 ```
-[CrearHash en GO](https://replit.com/@juampymdd/QuixoticAcademicHacks#main.go)
 
+
+[CrearHash en GO](https://replit.com/@juampymdd/QuixoticAcademicHacks#main.go)
+```py
+import hashlib
+import base64
+
+def CrearHash(frase):
+    hash_tool = hashlib.sha512()
+    phrase_as_bytes = frase.encode('utf-8')
+    hash_tool.update(phrase_as_bytes)
+    encrypted_bytes = hash_tool.digest()
+    return base64.b64encode(encrypted_bytes).decode('utf-8')
+```
+[CrearHash en Python](https://replit.com/@juampymdd/CreateHash-en-Python#main.py)
 **Paso 4:** Consumir el servicio web.
 1.  Para consumir un servicio deberá hacer una solicitud https enviando el hash obtenido en el paso 3 como último parámetro de la URL:
 ```javascript
