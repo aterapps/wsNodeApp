@@ -152,6 +152,8 @@ def CrearHash(frase):
     return base64.b64encode(encrypted_bytes).decode('utf-8')
 ```
 [CrearHash en Python](https://replit.com/@juampymdd/CreateHash-en-Python#main.py)
+
+
 **Paso 4:** Consumir el servicio web.
 1.  Para consumir un servicio deberá hacer una solicitud https enviando el hash obtenido en el paso 3 como último parámetro de la URL:
 ```javascript
