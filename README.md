@@ -72,7 +72,7 @@ https://api.ater.gob.ar/autenticar
     ```
 4.	Extraer los primeros 10 caracteres de la cadena obtenida en el paso anterior.
 
- ```javascript
+    ```javascript
         import crypto from 'crypto'
 
             crypto.createHash('sha512')
