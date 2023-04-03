@@ -60,7 +60,7 @@ https://api.ater.gob.ar/autenticar
     import crypto from 'crypto'
     
         crypto.createHash('sha512')
-            .update(frase)
+            .update(frase) // <--
     ```
 3.	Codificar en base 64 el resultado del paso anterior.
     ```javascript
@@ -68,6 +68,7 @@ https://api.ater.gob.ar/autenticar
 
             crypto.createHash('sha512')
                 .update(frase)
+                .digest('base64') // <--
     ```
 4.	Extraer los primeros 10 caracteres de la cadena obtenida en el paso anterior.
 
@@ -75,7 +76,9 @@ https://api.ater.gob.ar/autenticar
         import crypto from 'crypto'
 
             crypto.createHash('sha512')
-                .update(frase).slice(0,10)
+                .update(frase)
+                .digest('base64')
+                .slice(0,10) // <--
     ```
 
 >Aqui algunos daremos ejemplos en diferentes lenguajes de como obtener el hash (**recuerde que de este hash utilizaremos solo los primeros 10 caracteres** y los ejemplos retornan el hash completo)
