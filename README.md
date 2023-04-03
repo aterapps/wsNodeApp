@@ -66,9 +66,9 @@ https://api.ater.gob.ar/autenticar
     ```javascript
     import crypto from 'crypto'
 
-        crypto.createHash('sha512')
-            .update(frase)
-            .digest('base64') // <--
+    crypto.createHash('sha512')
+        .update(frase)
+        .digest('base64') // <--
     ```
 4.	Extraer los primeros 10 caracteres de la cadena obtenida en el paso anterior.
 
