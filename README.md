@@ -54,6 +54,8 @@ https://api.ater.gob.ar/autenticar
     const myParams = ["parametro1", "parametro2",...,"parametroN"]
 
     console.log(concat(MyClientID,myParams)) // '1234567890parametro1parametro2...parametroN'
+    
+    const frase = concat(MyClientID,myParams)
     ```
 2.	Hacer un sha512 con el resultado del paso anterior.
     ```javascript
