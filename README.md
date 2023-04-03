@@ -43,6 +43,18 @@ https://api.ater.gob.ar/autenticar
 
 **Paso 3:** Generar hash. 
 1.	Concatenar ID cliente (obtenido en el paso 1) con los parámetros respetando el orden de los mismos.
+    ```typescript
+        //Definimos la funcion concat
+        
+        function concat(clientID:string , params:string[] ):string{
+            return `${clientID}${params.join('')}`
+        }
+        
+        const myClientID='1234567890'
+        const myParams = ["parametro1", "parametro2",...,"parametroN"]
+        
+        console.log(concat(MyClientID,myParams)) // '1234567890parametro1parametro2...parametroN'
+    ```
 2.	Hacer un sha512 con el resultado del paso anterior.
 3.	Codificar en base 64 el resultado del paso anterior.
 4.	Extraer los primeros 10 caracteres de la cadena obtenida en el paso anterior.
