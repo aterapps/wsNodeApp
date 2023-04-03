@@ -78,7 +78,7 @@ https://api.ater.gob.ar/autenticar
     crypto.createHash('sha512')
         .update(frase)
         .digest('base64')
-        .slice(0,10) // <--W
+        .slice(0,10) // <--
     ```
 
 >Aqui algunos daremos ejemplos en diferentes lenguajes de como obtener el hash (**recuerde que de este hash utilizaremos solo los primeros 10 caracteres** y los ejemplos retornan el hash completo)
