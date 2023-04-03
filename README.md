@@ -44,41 +44,41 @@ https://api.ater.gob.ar/autenticar
 **Paso 3:** Generar hash. 
 1.	Concatenar ID cliente (obtenido en el paso 1) con los parámetros respetando el orden de los mismos.
     ```typescript
-        //Definimos la funcion concat para armar la frase que usaremos para generar el hash
-        
-        function concat( clientID: string , params: string[] ):string{
-            return `${ clientID }${ params.join('') }`
-        }
-        
-        const myClientID='1234567890'
-        const myParams = ["parametro1", "parametro2",...,"parametroN"]
-        
-        console.log(concat(MyClientID,myParams)) // '1234567890parametro1parametro2...parametroN'
+    //Definimos la funcion concat para armar la frase que usaremos para generar el hash
+
+    function concat( clientID: string , params: string[] ):string{
+        return `${ clientID }${ params.join('') }`
+    }
+
+    const myClientID='1234567890'
+    const myParams = ["parametro1", "parametro2",...,"parametroN"]
+
+    console.log(concat(MyClientID,myParams)) // '1234567890parametro1parametro2...parametroN'
     ```
 2.	Hacer un sha512 con el resultado del paso anterior.
     ```javascript
     import crypto from 'crypto'
     
-        crypto.createHash('sha512')
-            .update(frase) // <--
+    crypto.createHash('sha512')
+        .update(frase) // <--
     ```
 3.	Codificar en base 64 el resultado del paso anterior.
     ```javascript
-        import crypto from 'crypto'
+    import crypto from 'crypto'
 
-            crypto.createHash('sha512')
-                .update(frase)
-                .digest('base64') // <--
+        crypto.createHash('sha512')
+            .update(frase)
+            .digest('base64') // <--
     ```
 4.	Extraer los primeros 10 caracteres de la cadena obtenida en el paso anterior.
 
     ```javascript
-        import crypto from 'crypto'
+    import crypto from 'crypto'
 
-            crypto.createHash('sha512')
-                .update(frase)
-                .digest('base64')
-                .slice(0,10) // <--
+    crypto.createHash('sha512')
+        .update(frase)
+        .digest('base64')
+        .slice(0,10) // <--W
     ```
 
 >Aqui algunos daremos ejemplos en diferentes lenguajes de como obtener el hash (**recuerde que de este hash utilizaremos solo los primeros 10 caracteres** y los ejemplos retornan el hash completo)
