@@ -85,7 +85,11 @@ https://api.ater.gob.ar/autenticar
 
 >Aqui algunos daremos ejemplos en diferentes lenguajes de como obtener el hash (**recuerde que de este hash utilizaremos solo los primeros 10 caracteres** y los ejemplos retornan el hash completo)
    
+>Para probar el funcionamiento con POSTMAN puede utilizar el siguiente [enlace](API-ATER.postman_collection.json) para importar la colección de ejemplos. Y la documentación para configurarlo del siguiente [enlace](POSTMAN.md)
 
+```typescript
+
+```typescript
 ```javascript 
 // Node.js:
 
