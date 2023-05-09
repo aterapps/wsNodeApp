@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "8145354b-d90f-459e-845b-ef8571743cf4",
+		"name": "API-ATER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4469851",
+		"_collection_link": "https://lunar-astronaut-730296.postman.co/workspace/ATER~ef32e9ca-2353-4394-8341-8e6a60906416/collection/4469851-8145354b-d90f-459e-845b-ef8571743cf4?action=share&creator=4469851&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "get_token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const pfx_path = pm.environment.get('PFX_PATH');\r",
+							"\r",
+							"pm.sendRequest({\r",
+							"    url: 'file://' + pfx_path,\r",
+							"    method: 'GET',\r",
+							"    header: 'Content-Type: application/octet-stream'\r",
+							"}, function (err, res) {\r",
+							"    \r",
+							"    if (err) {\r",
+							"        console.log(\"hola\")\r",
+							"        console.error(err);\r",
+							"        return;\r",
+							"    }\r",
+							"\r",
+							"    const agent = new require('https').Agent({\r",
+							"        pfx: res.body,\r",
+							"        passphrase: '',\r",
+							"        rejectUnauthorized: false\r",
+							"    });\r",
+							"\r",
+							"    pm.variables.set('agent', agent);\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.ater.gob.ar/autenticar",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ater",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"autenticar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gobierno/automotores",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const param= pm.request.url.path[2]\r",
+							"\r",
+							"const param2 = pm.request.url.path[3] \r",
+							"\r",
+							"let parametros = param\r",
+							"\r",
+							"if(param2) parametros = param + param2\r",
+							"\r",
+							"console.log(parametros)\r",
+							"\r",
+							"const frase =pm.variables.get(\"CLIENT_ID\") + parametros;\r",
+							"\r",
+							"console.log(frase)\r",
+							"\r",
+							"var hash = CryptoJS.SHA512(frase);\r",
+							"var hashBase64 = hash.toString(CryptoJS.enc.Base64);\r",
+							"var hashSubstr = hashBase64.substr(0, 10);\r",
+							"\r",
+							"\r",
+							"\r",
+							"const baseUrl = pm.request.url.toString();\r",
+							"\r",
+							"const path =pm.request.url.path\r",
+							"\r",
+							" pm.request.url.path = [...pm.request.url.path,hashSubstr]\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.ater.gob.ar/gobierno/automotores/AD629IK",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ater",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"gobierno",
+						"automotores",
+						"AD629IK"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "personas/juridicas",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const param= pm.request.url.path[2]\r",
+							"\r",
+							"const param2 = pm.request.url.path[3] \r",
+							"\r",
+							"let parametros = param\r",
+							"\r",
+							"if(param2) parametros = param + param2\r",
+							"\r",
+							"console.log(parametros)\r",
+							"\r",
+							"const frase =pm.variables.get(\"CLIENT_ID\") + parametros;\r",
+							"\r",
+							"console.log(frase)\r",
+							"\r",
+							"var hash = CryptoJS.SHA512(frase);\r",
+							"var hashBase64 = hash.toString(CryptoJS.enc.Base64);\r",
+							"var hashSubstr = hashBase64.substr(0, 10);\r",
+							"\r",
+							"\r",
+							"\r",
+							"const baseUrl = pm.request.url.toString();\r",
+							"\r",
+							"const path =pm.request.url.path\r",
+							"\r",
+							" pm.request.url.path = [...pm.request.url.path,hashSubstr]\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.ater.gob.ar/personas/juridicas/30716840944",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ater",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"personas",
+						"juridicas",
+						"30716840944"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gobierno/embarcaciones",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const param= pm.request.url.path[2]\r",
+							"\r",
+							"const param2 = pm.request.url.path[3] \r",
+							"\r",
+							"let parametros = param\r",
+							"\r",
+							"if(param2) parametros = param + param2\r",
+							"\r",
+							"\r",
+							"const frase =pm.variables.get(\"CLIENT_ID\") + parametros;\r",
+							"\r",
+							"console.log(frase)\r",
+							"\r",
+							"var hash = CryptoJS.SHA512(frase);\r",
+							"var hashBase64 = hash.toString(CryptoJS.enc.Base64);\r",
+							"var hashSubstr = hashBase64.substr(0, 10);\r",
+							"\r",
+							"\r",
+							"\r",
+							"const baseUrl = pm.request.url.toString();\r",
+							"\r",
+							"const path =pm.request.url.path\r",
+							"\r",
+							" pm.request.url.path = [...pm.request.url.path,hashSubstr]\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.ater.gob.ar/gobierno/embarcaciones/Juan%20Manuel%20Acosta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ater",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"gobierno",
+						"embarcaciones",
+						"Juan%20Manuel%20Acosta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gobierno/maquinarias",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"const param= pm.request.url.path[2]\r",
+							"\r",
+							"const frase =pm.variables.get(\"CLIENT_ID\") + param;\r",
+							"\r",
+							"console.log(frase)\r",
+							"\r",
+							"var hash = CryptoJS.SHA512(frase);\r",
+							"var hashBase64 = hash.toString(CryptoJS.enc.Base64);\r",
+							"var hashSubstr = hashBase64.substr(0, 10);\r",
+							"\r",
+							"\r",
+							"\r",
+							"const baseUrl = pm.request.url.toString();\r",
+							"\r",
+							"const path =pm.request.url.path\r",
+							"\r",
+							" pm.request.url.path = [...pm.request.url.path,hashSubstr]\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.ater.gob.ar/gobierno/maquinarias/20372244918",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ater",
+						"gob",
+						"ar"
+					],
+					"path": [
+						"gobierno",
+						"maquinarias",
+						"20372244918"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "91f42829454fddef6086206a622230955ccb7568da318c8a3ef6673da9b5dc8869d15431306121c18e5b079f9765c53950b1baad0a0e889fc31e67e6f0994de05e9692cf204bd9eabf2fe664699e6f4f64f76f9368cb7b786a7c3cb595c5d5b7392515f086c36f201520ca241b0cf542f3e87cd44f4b86ef8d3c8a3b9d9dd45dd03ef475b0d3f7e2739c3be163c5c6bbe6ce7638f529dfc855a742715d21b4eb0161cfbd31e9f3c4270bbf6fb320c4683b30f382b383e34a592a129235fa3ef6ded316c6c16ba13da8f8ec25514b8e20e83902249658d0f22499124ff0333cd95f22047b306ff97258eaa3be514554fc198d6276e92aaa3ce88cfb242c027684332eedbf8fd7f9cae566be1292796916aa0bdd2fba7e2ddbe340d18573bdfe8939dd0acaeccdb1b1b726a9fa7b5a2f5263ae85cc9d960fc492d453607b46a9a7432173485fde4b8da043a85484301f62616ab24294051319a53a266d8d65f8be014ce45d3fcc511cfdfc8e630857b8ca35b4d46269dcccde0aa7b0e95db42eefdb0c49590b37c067e2a559cf8d3d1222da48ef96aa388d5b83960e98883bbf02ebff76a2abdf9fb322d2f85de62bba63768c30160a51bed6e60ec7ee00044556",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

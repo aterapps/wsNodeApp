@@ -6,9 +6,9 @@ const axios = require('axios');
 
 
     const config = {
-        client_id: '633c1bf4d4708efdc07e4e83',
-        cert_name: '192.168.3.190',
-        passphrase: ''
+        client_id: '', //client_id
+        cert_name: '', //cert_name
+        passphrase: '' //passphrase si es pfx y con contraseña
     }
 
     const key = fs.readFileSync(path.join(__dirname, 'certs',`${config.cert_name}.key`));

@@ -71,3 +71,6 @@ Si todo funciona correctamente deberia de recibir como respuesta el token Bearer
 Una vez que tengamos el token Bearer, solo nos queda indicar que se lo utilice para todas las solicitudes. Para hacer esto, haga clic con el botón izquierdo sobre la carpeta "API-ATER" que se encuentra en la colección de su Workspace. Luego, en la sección de "Authorization", seleccione el type "Bearer Token" y agregue el token obtenido en la sección anterior. De esta manera, todas las solicitudes dentro de la carpeta "API-ATER" utilizarán automáticamente el token Bearer para autenticarse.
 
 ![Descripción de la imagen](https://i.ibb.co/Bqs7kWq/2023-04-05-12-28-58-API-ATER-My-Workspace.png)
+
+### Postman Collection
+[POSTMAN collection](API-ATER.postman_collection.json)
