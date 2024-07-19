@@ -166,7 +166,7 @@
 							"\r",
 							"const path =pm.request.url.path\r",
 							"\r",
-							" pm.request.url.path = [...pm.request.url.path,hashSubstr]\r",
+							" pm.request.url.path = [...pm.request.url.path,hashSubstr.replaceAll('/', '%2F')]\r",
 							""
 						],
 						"type": "text/javascript"
@@ -233,7 +233,7 @@
 							"\r",
 							"const path =pm.request.url.path\r",
 							"\r",
-							" pm.request.url.path = [...pm.request.url.path,hashSubstr]\r",
+							" pm.request.url.path = [...pm.request.url.path,hashSubstr.replaceAll('/', '%2F')]\r",
 							""
 						],
 						"type": "text/javascript"
@@ -285,7 +285,7 @@
 							"\r",
 							"const path =pm.request.url.path\r",
 							"\r",
-							" pm.request.url.path = [...pm.request.url.path,hashSubstr]\r",
+							" pm.request.url.path = [...pm.request.url.path,hashSubstr.replaceAll('/', '%2F')]\r",
 							""
 						],
 						"type": "text/javascript"
